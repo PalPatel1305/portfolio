@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener("load", function () {
+            const texts = ["a Developer", "a Designer", "Passionate about Coding"]; // The array of texts to display
+            const typingSpeed = 100; // Adjust the speed of typing (in milliseconds)
+            const typingDelay = 1000; // Adjust the delay before typing starts (in milliseconds)
+
+            let textIndex = 0;
+            let charIndex = 0;
+            const typingElement = document.getElementById("typingEffect");
+            const arrowElement = document.getElementById("typingArrow");
+
+            function typeNextCharacter() {
+                if (charIndex < texts[textIndex].length) {
+                    typingElement.textContent += texts[textIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeNextCharacter, typingSpeed);
+                } else {
+                    setTimeout(eraseText, typingDelay);
+                }
+            }
+
+            function eraseText() {
+                if (charIndex > 0) {
+                    typingElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(eraseText, typingSpeed);
+                } else {
+                    textIndex = (textIndex + 1) % texts.length; // Move to the next text in the array
+                    setTimeout(typeNextCharacter, typingDelay);
+                }
+            }
+
+            setTimeout(typeNextCharacter, typingDelay);
+
+
+            var form = document.getElementById('contactForm');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var message = document.getElementById('message').value;
+
+                // Send the data to the server-side script or email service using AJAX or other methods
+                // Here, you can make an AJAX request to your server-side script or utilize an email service like SendGrid or Nodemailer to send the email.
+                // Example: Make an AJAX request using Fetch API
+                fetch('C:\\Users\\13653\\Desktop\\PortfolioFinal\\contact.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        message: message
+                    })
+                })
+                    .then(function (response) {
+                        // Handle the response from the server or email service
+                        // Display a success message or show an error if applicable
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        // Handle any errors that occur during the request or email sending process
+                        console.error(error);
+                    });
+
+                // Reset the form fields after submission
+                form.reset();
+            });
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Portfolio</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="#skills" onclick="toggleMenu();">Skills</a></li>
+            <li><a href="#services" onclick="toggleMenu();">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+            <li><a id="downloadLink" href="File/Pal_Patel_Resume.pdf" target="new" download>Download File</a></li>
+        </ul>
+    </header>
+    <section class="banner" id="home">
+        <div class="text-banner">
+            <h2>Pal Patel <br> I am
+                <span id="typingEffect"></span><span id="typingArrow">▌</span>
+            </h2>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="heading">
+            <h2>About Me</h2>
+        </div>
+        <div class="content">
+            <div class="contentbox">
+                <h3>I'm a dedicated full-stack developer passionate about crafting seamless and immersive digital
+                    experiences. </h3>
+                <p>With expertise in both front-end and back-end technologies, I bring a comprehensive skill set to the
+                    table. From designing intuitive user interfaces to implementing complex server-side logic, I thrive
+                    on the challenge of creating robust and scalable web applications. <br><br>I am constantly learning
+                    and staying up-to-date with the latest industry trends and best practices to ensure that my work
+                    remains at the forefront of web development.
+                    <br><br>Let's work together to bring your ideas to life!
+                </p>
+            </div>
+            <div class="w50">
+                <img src="https://github.com/JackCree/CSSexercices/blob/main/Responsive-web-design-landing-page-01/foots.jpg?raw=true"
+                    class="img">
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <hr>
+            <div class="row">
+                <div class="skill col-12 col-lg-3">
+                    <div class="skills__percent">95%</div>
+                    <div class="progress-container">
+                        <strong>HTML / CSS</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill col-12 col-lg-3">
+                    <div class="skills__percent">90%</div>
+                    <div class="progress-container">
+                        <strong>JavaScript</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill col-12 col-lg-3">
+                    <div class="skills__percent">85%</div>
+                    <div class="progress-container">
+                        <strong>AWS</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill col-12 col-lg-3">
+                    <div class="skills__percent">80%</div>
+                    <div class="progress-container">
+                        <strong>Python</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-5">
+                <div class="skill col-12 col-lg-3">
+                    <div class="skills__percent">90%</div>
+                    <div class="progress-container">
+                        <strong>SQL/GraphQl</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill col-12 col-lg-3">
+                    <div class="skills__percent">85%</div>
+                    <div class="progress-container">
+                        <strong>Java/C++</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill col-12 col-lg-3">
+                    <div class="skills__percent">85%</div>
+                    <div class="progress-container">
+                        <strong>React.js/Node.js</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill col-12 col-lg-3">
+                    <div class="skills__percent">75%</div>
+                    <div class="progress-container">
+                        <strong>.NET</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="heading white">
+            <h2>Projects</h2>
+            <p>In one sentence, create simple HTML/CSS landing page</p>
+        </div>
+        
+        <div class="content">
+            <figure class="snip1401">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.3JsktH2vcwybRS5Et2T0pQHaFj&pid=Api&P=0&h=180" alt="sample67" />
+                <figcaption>
+                    <h3>Cake Shop</h3>
+                    <p>Node.js and React powered website for a delightful cake shop experience.</p>
+                </figcaption><i class="ion-link"></i>
+                <a href="#"></a>
+            </figure>
+            <figure class="snip1401">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.pA9TQfLLvgrbofgGcs63PwHaEK&pid=Api&P=0&h=180" alt="sample67" />
+                <figcaption>
+                    <h3>Car Website</h3>
+                    <p>Python and Django powered multipage website with contact functionality.</p>
+                </figcaption><i class="ion-link"></i>
+                <a href="#"></a>
+            </figure>
+            <figure class="snip1401"><img src="https://tse4.mm.bing.net/th?id=OIP.d_P7o0ABHZF2yJRqUVgSdQHaEo&pid=Api&P=0&h=180"
+                    alt="sample93" />
+                <figcaption>
+                    <h3>Dice game </h3>
+                    <p>Roll the dice and test your luck in our thrilling Java-based dice game.</p>
+                </figcaption><i class="ion-link"></i>
+                <a href="#"></a>
+            </figure>
+
+            <figure class="snip1401"><img src="https://tse3.mm.bing.net/th?id=OIP.-YONavgGy1QLuk77Zq1DeQHaEK&pid=Api&P=0&h=180"
+                    alt="sample93" />
+                <figcaption>
+                    <h3>Shopping Website</h3> 
+                    <p>Discover exquisite furniture shopping experience on our PHP-based website with REST API integration.</p>
+                </figcaption><i class="ion-link"></i>
+                <a href="#"></a>
+            </figure>
+            <figure class="snip1401"><img src="https://i.pinimg.com/originals/ee/2b/0f/ee2b0f4543ac7ce37b504e7b3d8eb3b6.jpg"
+                    alt="sample87" />
+                <figcaption>
+                    <h3>Star game</h3>
+                    <p>Unleash your creativity and challenge your skills in our captivating SVG star game.
+                    </p>
+                </figcaption><i class="ion-link"></i>
+                <a href="#"></a>
+            </figure>
+
+            <figure class="snip1401"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg"
+                    alt="sample87" />
+                <figcaption>
+                    <h3>Canada Tour Website</h3>
+                    <p>Explore Canada with our HTML/CSS/Bootstrap tour website.
+                    </p>
+                </figcaption><i class="ion-link"></i>
+                <a href="#"></a>
+            </figure>
+        </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="heading white">
+            <h2>Contact Me</h2>
+            <p>Some questions about work. Here you are.</p>
+        </div>
+        <div class="content">
+            <div class="contactinfo">
+                <h3>Contact Informations</h3>
+                <div class="contactinfobox">
+                    <div class="box">
+                        <div class="icon"><i class="fas fa-phone"></i></div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p>+1 (365)-324-9319</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div class="text">
+                            <h3>Mail</h3>
+                            <p>contact.palpatel@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div class="text">
+                            <h3>Social Media</h3>
+                            <p><i class="ion-social-linkedin"></i><i class="ion-social-instagram"></i><i
+                                    class="ion-social-whatsapp"></i><i class="ion-social-yahoo"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formbox">
+                <form id="contactForm">
+                    <h3>Message Me</h3>
+                    <input id="name" type="text" name="" placeholder="Full Name">
+                    <input id="email" type="email"  name="" placeholder="Your email">
+                    <textarea id="message" placeholder="Your message"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="copyright">
+        Copyright 2020 © Online Tutorials. All Rights Reserved
+    </div>
+    <script type="text/javascript">  window.addEventListener('scroll', function () {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        function toggleMenu() {
+            var menutoggle = document.querySelector('.toggle');
+            var menu = document.querySelector('.menu');
+            menutoggle.classList.toggle('active');
+            menu.classList.toggle('active')
+        }
+    </script>
+</body>
+
+</html>
