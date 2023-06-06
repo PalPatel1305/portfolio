@@ -1,8 +1,9 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    ini_set('SMTP', "server.com");
-    ini_set('smtp_port', "25");
-    ini_set('sendmail_from', "email@domain.com");
+vardump($_SERVER['REQUEST_METHOD']);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     ini_set('SMTP', "server.com");
+//     ini_set('smtp_port', "25");
+//     ini_set('sendmail_from', "email@domain.com");
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
