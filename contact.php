@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ini_set('SMTP', "server.com");
     ini_set('smtp_port', "25");
     ini_set('sendmail_from', "email@domain.com");

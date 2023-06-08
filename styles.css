@@ -300,7 +300,8 @@ header ul li a {
 .banner {
   position: relative;
   min-height: 100vh;
-  background: url(https://github.com/JackCree/CSSexercices/blob/main/Responsive-web-design-landing-page-01/banner.jpg?raw=true);
+ 
+  background-image: url("File\\back.jpg");
   background-size: cover;
   background-position: right;
   display: flex;
@@ -417,45 +418,16 @@ header ul li a {
   background: #111;  
 }
 .formbox {
-  min-width: 60%;
-}
-.formbox form {
-  display: flex;
-  flex-direction :column;
-}
-.formbox form h3, .contactinfo h3 {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-.formbox form input, 
-.formbox form textarea {
-  margin-bottom: 20px;
-  padding: 15px;
-  font-size: 16px;
-  background: transparent;
-  border: none;
-  outline: none;
-  background: #222;
-  color: #fff;
-  resize: none;
-}
-.formbox form textarea {
-  min-height: 200px;
-}
-.formbox form input:placeholder
-.formbox form textarea:placeholder {
-  color: #999;
-}
-.formbox form input[type="submit"] {
-  max-width: 100px;
-  background: #2196f3;
-  cursor: pointer;
-  text-transform: uppercase;
+  padding: 40px;
+  width: 50%;
+  color: gainsboro;
+
 }
 .contactinfo {
   min-height: 40%;
+}
+.contactinfo h3{
+  color: #e8e8e8;
 }
 .contactinfobox {
   position: relative;  
@@ -484,12 +456,15 @@ header ul li a {
 }
 .contactinfobox .box .text h3 {
   font-weight: 500;
-  color: #2196f3;
+  color: blanchedalmond;
   margin-bottom: 0;
 }
 .contactinfobox .box .text p i {
   font-size: xx-large;
   margin: 5px;
+}
+.contactinfobox .box .text a {
+ color: #e8e8e8;
 }
 /*Copyright section design*/
 .copyright {

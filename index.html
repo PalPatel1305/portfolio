@@ -47,41 +47,41 @@
             setTimeout(typeNextCharacter, typingDelay);
 
 
-            var form = document.getElementById('contactForm');
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
+            // var form = document.getElementById('contactForm');
+            // form.addEventListener('submit', function (event) {
+            //     event.preventDefault();
 
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var message = document.getElementById('message').value;
+            //     var name = document.getElementById('name').value;
+            //     var email = document.getElementById('email').value;
+            //     var message = document.getElementById('message').value;
 
-                // Send the data to the server-side script or email service using AJAX or other methods
-                // Here, you can make an AJAX request to your server-side script or utilize an email service like SendGrid or Nodemailer to send the email.
-                // Example: Make an AJAX request using Fetch API
-                fetch('contact.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        message: message
-                    })
-                })
-                    .then(function (response) {
-                        // Handle the response from the server or email service
-                        // Display a success message or show an error if applicable
-                        console.log(response);
-                    })
-                    .catch(function (error) {
-                        // Handle any errors that occur during the request or email sending process
-                        console.error(error);
-                    });
+            //     // Send the data to the server-side script or email service using AJAX or other methods
+            //     // Here, you can make an AJAX request to your server-side script or utilize an email service like SendGrid or Nodemailer to send the email.
+            //     // Example: Make an AJAX request using Fetch API
+            //     fetch('contact.php', {
+            //         method: 'POST',
+            //         headers: {
+            //             'Content-Type': 'application/json'
+            //         },
+            //         body: JSON.stringify({
+            //             name: name,
+            //             email: email,
+            //             message: message
+            //         })
+            //     })
+            //         .then(function (response) {
+            //             // Handle the response from the server or email service
+            //             // Display a success message or show an error if applicable
+            //             console.log(response);
+            //         })
+            //         .catch(function (error) {
+            //             // Handle any errors that occur during the request or email sending process
+            //             console.error(error);
+            //         });
 
-                // Reset the form fields after submission
-                form.reset();
-            });
+            //     // Reset the form fields after submission
+            //     form.reset();
+            // });
 
         })
 
@@ -97,6 +97,7 @@
             <li><a href="#about" onclick="toggleMenu();">About</a></li>
             <li><a href="#skills" onclick="toggleMenu();">Skills</a></li>
             <li><a href="#services" onclick="toggleMenu();">Projects</a></li>
+            <li><a href="#resume" onclick="toggleMenu();">Resume</a></li>
             <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
         </ul>
     </header>
@@ -124,8 +125,7 @@
                 </p>
             </div>
             <div class="w50">
-                <img src="https://www.wallpapertip.com/wmimgs/160-1606283_web-developer-wallpaper.jpg"
-                    class="aboutimg">
+                <img src="https://www.wallpapertip.com/wmimgs/160-1606283_web-developer-wallpaper.jpg" class="aboutimg">
             </div>
         </div>
     </section>
@@ -219,10 +219,11 @@
             <h2>Projects</h2>
             <p>In one sentence, create simple HTML/CSS landing page</p>
         </div>
-        
+
         <div class="content">
             <figure class="snip1401">
-                <img src="https://tse4.mm.bing.net/th?id=OIP.3JsktH2vcwybRS5Et2T0pQHaFj&pid=Api&P=0&h=180" alt="sample67" />
+                <img src="https://tse4.mm.bing.net/th?id=OIP.3JsktH2vcwybRS5Et2T0pQHaFj&pid=Api&P=0&h=180"
+                    alt="sample67" />
                 <figcaption>
                     <h3>Cake Shop</h3>
                     <p>Node.js and React powered website for a delightful cake shop experience.</p>
@@ -230,14 +231,16 @@
                 <a href="https://github.com/PalPatel1305/cake-shop"></a>
             </figure>
             <figure class="snip1401">
-                <img src="https://tse3.mm.bing.net/th?id=OIP.pA9TQfLLvgrbofgGcs63PwHaEK&pid=Api&P=0&h=180" alt="sample67" />
+                <img src="https://tse3.mm.bing.net/th?id=OIP.pA9TQfLLvgrbofgGcs63PwHaEK&pid=Api&P=0&h=180"
+                    alt="sample67" />
                 <figcaption>
                     <h3>Car Website</h3>
                     <p>Python and Django powered multipage website with contact functionality.</p>
                 </figcaption><i class="ion-link"></i>
                 <a href="https://github.com/PalPatel1305/My-Projects/tree/master/Django/car%20project"></a>
             </figure>
-            <figure class="snip1401"><img src="https://tse4.mm.bing.net/th?id=OIP.d_P7o0ABHZF2yJRqUVgSdQHaEo&pid=Api&P=0&h=180"
+            <figure class="snip1401"><img
+                    src="https://tse4.mm.bing.net/th?id=OIP.d_P7o0ABHZF2yJRqUVgSdQHaEo&pid=Api&P=0&h=180"
                     alt="sample93" />
                 <figcaption>
                     <h3>Dice game </h3>
@@ -246,16 +249,18 @@
                 <a href="https://github.com/PalPatel1305/My-Projects/tree/master/JAVA/DiceGame1"></a>
             </figure>
 
-            <figure class="snip1401"><img src="https://tse3.mm.bing.net/th?id=OIP.-YONavgGy1QLuk77Zq1DeQHaEK&pid=Api&P=0&h=180"
+            <figure class="snip1401"><img
+                    src="https://tse3.mm.bing.net/th?id=OIP.-YONavgGy1QLuk77Zq1DeQHaEK&pid=Api&P=0&h=180"
                     alt="sample93" />
                 <figcaption>
-                    <h3>Shopping Website</h3> 
-                    <p>Discover exquisite furniture shopping experience on our PHP-based website with REST API integration.</p>
+                    <h3>Shopping Website</h3>
+                    <p>Discover exquisite furniture shopping experience on our PHP-based website with REST API
+                        integration.</p>
                 </figcaption><i class="ion-link"></i>
                 <a href="https://github.com/PalPatel1305/My-Projects/tree/master/Shopping%20Website"></a>
             </figure>
-            <figure class="snip1401"><img src="https://i.pinimg.com/originals/ee/2b/0f/ee2b0f4543ac7ce37b504e7b3d8eb3b6.jpg"
-                    alt="sample87" />
+            <figure class="snip1401"><img
+                    src="https://i.pinimg.com/originals/ee/2b/0f/ee2b0f4543ac7ce37b504e7b3d8eb3b6.jpg" alt="sample87" />
                 <figcaption>
                     <h3>Star game</h3>
                     <p>Unleash your creativity and challenge your skills in our captivating SVG star game.
@@ -276,17 +281,20 @@
         </div>
         </div>
     </section>
-    <div class="thumb">
-        <br>
-        <h1>Resume</h1>
-        
-        <a id="downloadLink" href="File/Pal_Patel_Resume.pdf" target="new" download>
-           <span>Download here!!</span>
-        </a>
-        
-        
-  </div>
-  
+    <span id="resume">
+
+        <div class="thumb" >
+            <br>
+            <h1>Resume</h1>
+
+            <a id="downloadLink" href="File/Pal_Patel_Resume.pdf" target="new" download>
+                <span>Download here!!</span>
+            </a>
+
+
+        </div>
+    </span>
+
     <section class="contact" id="contact">
         <div class="heading white">
             <h2>Contact Me</h2>
@@ -314,25 +322,37 @@
                         <div class="icon"><i class="fas fa-envelope"></i></div>
                         <div class="text">
                             <h3>Social Media</h3>
-                            <p><i class="ion-social-linkedin"></i><i class="ion-social-instagram"></i><i
-                                    class="ion-social-whatsapp"></i><i class="ion-social-yahoo"></i></p>
+                            <p><a href="https://www.linkedin.com/in/pal-patel-895720234/" target="new"><i
+                                        class="ion-social-linkedin"></i></a>
+                                <a href="https://www.instagram.com/pal_patel1305/" target="new"><i
+                                        class="ion-social-instagram"></i></a>
+                                <a href="https://wa.me/+13653249319" target="new"><i
+                                        class="ion-social-whatsapp"></i></a>
+                                <a href="mailto:palpatel1305@gmail.com" target="new"><i
+                                        class="ion-social-yahoo"></i></a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="formbox">
-                <form id="contactForm">
-                    <h3>Message Me</h3>
-                    <input id="name" type="text" name="" placeholder="Full Name">
-                    <input id="email" type="email"  name="" placeholder="Your email">
-                    <textarea id="message" placeholder="Your message"></textarea>
-                    <input type="submit" value="Send">
-                </form>
+                <h5>Feel free to reach out to me using the contact information provided on the left.
+                    I'm excited to connect with you and discuss any potential collaboration, opportunities, or simply
+                    engage
+                    in meaningful conversations.<br><br>
+                    Whether you have a question, a project idea, or just want to say hello,
+                    I'm always eager to connect with fellow enthusiasts and professionals in the field. Don't hesitate
+                    to drop me a line,
+                    and I'll be sure to get back to you as soon as possible.<br><br> I'm looking forward to hearing from
+                    you and
+                    exploring the
+                    possibilities together!</h5>
+
             </div>
         </div>
     </section>
     <div class="copyright">
-        Copyright 2020 © Online Tutorials. All Rights Reserved
+        Copyright 2023 © Pal Patel. All Rights Reserved.
     </div>
     <script type="text/javascript">  window.addEventListener('scroll', function () {
             var header = document.querySelector('header');
