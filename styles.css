@@ -301,7 +301,7 @@ header ul li a {
   position: relative;
   min-height: 100vh;
  
-  background-image: url("File\\back.jpg");
+  background-image: url("File\\final.jpg");
   background-size: cover;
   background-position: right;
   display: flex;
