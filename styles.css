@@ -421,6 +421,7 @@ header ul li a {
   padding: 40px;
   width: 50%;
   color: gainsboro;
+  display: block;
 
 }
 .contactinfo {
@@ -560,6 +561,12 @@ header ul li a {
     height: 200px;
   }
 
+  .formbox{
+    width: fit-content;
+  }
+  .aboutimg{
+    margin: 35px;
+  }
   
   .contactinfo {
     margin: 20px 0;
